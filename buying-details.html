@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buying Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Books Haven</h1>
+        </div>
+        <div class="cart">
+            <img src="https://cdn-icons-png.flaticon.com/128/3781/3781787.png" alt="Cart" class="cart-icon" onclick="window.location.href='cart.html'">
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Buying Details</h2>
+        <div id="product-details"></div>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            <h3>Total Amount: $<span id="total-amount">0.00</span></h3>
+            <button class="continue-btn" type="submit">Continue to Buy</button>
+        </form>
+    </div>
+    <script>
+        function calculateTotal(cart) {
+            return cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+        }
+
+        window.onload = function() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').innerText = cart.length;
+
+            let totalAmount = calculateTotal(cart);
+            document.getElementById('total-amount').innerText = totalAmount;
+
+            let productDetails = '';
+            cart.forEach(item => {
+                productDetails += `
+                    <div class="product-item">
+                        <img src="${item.src}" alt="${item.title}" class="product-image">
+                        <div class="product-details">
+                            <h3>${item.title}</h3>
+                            <p>$${item.price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('product-details').innerHTML = productDetails;
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Handle form submission here (e.g., send data to server)
+            alert('Order successful!');
+            // Redirect to home page or thank you page
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

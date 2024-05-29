@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Books Haven</h1>
+        </div>
+        <div class="cart">
+            <img src="https://cdn-icons-png.flaticon.com/128/3781/3781787.png" alt="Cart" class="cart-icon" onclick="window.location.href='cart.html'">
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="product-details"></div>
+        <div class="description">
+            <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+    <script>
+         const products = [
+            { id: 1, title: 'The book of life', description: 'by DR. RAJAN PANDEY', price:10, src: 'https://cdn.kobo.com/book-images/4253b8a9-bce6-47c0-bfe3-0a17b2b74d5a/1200/1200/False/the-book-of-life-42.jpg' },
+            { id: 2, title: 'The Psychology of Money', description: 'by Morgan Housel', price: 75, src: 'https://fourminutebooks.com/wp-content/uploads/2022/11/life-changing-books-5-663x1024.jpg'},
+            { id: 3, title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',description: 'by James Clear', price: 13,src: 'https://markmanson.net/wp-content/uploads/2023/06/atomic-habits.jpg' },
+            { id: 4, title: 'The Wealth Money Cant Buy: The 8 Hidden Habits to Live Your Richest Life',description: 'by Robin Sharma, Adam Sims',price:21,src: 'https://m.media-amazon.com/images/I/510186bmxkL._SY445_SX342_.jpg' },
+            { id: 5, title: 'The Book of Life', description: 'by J.Krishnamurti', price: 37, src: 'https://m.media-amazon.com/images/I/51MB4Tc-cFL._AC_UF1000,1000_QL80_.jpg' },
+            { id: 6, title: 'The Focus on What Matters: A Collection of Stoic Letters on Living Well', description: 'by Darius Foroux', price: 42.00, src: 'https://m.media-amazon.com/images/I/71cjI4kaaZL._AC_UY218_.jpg' },
+            { id: 7, title: 'Gita Wisdom Through Quotes', description: 'by Chaitanya Charan ', price: 15.00, src: 'https://www.crossword.in/cdn/shop/products/9789387282247_1_360x.jpg?v=1672832048' },
+            { id: 8, title: 'The Leopard: A Harry Hole Novel', description: 'by Jo Nesbo and Don Bartlett', price: 22.00, src: 'https://www.crossword.in/cdn/shop/products/9780099563648_360x.jpg?v=1680185346' },
+            { id: 9, title: 'Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not!', description: 'by  Robert T. Kiyosaki', price: 10.00, src: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTnEnIIqsLMdgN9UXAmLVde7rwRIEdm6nFlkEn_yC02UCy5eWZhsi4dK_nW0cTKe8cwQkHAMpkxsPyMCdK2NZ4KERBGF9ZPnLdQ1WINIBnSu_DFFTKGEOSaJg&usqp=CAE' },
+            { id: 10, title: 'The Roots', description: 'by Alex Haley', price: 23.00, src: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSM5pP1wedqh8VbY0yMY8WG9T5cP5wS8jlO4DJPWTEwXR1RvU3Nu8C2s3Q8M3KEUKVtdOw9IKQkEol2HxbVBNY60N_UkBUYXef8sJQOgbAroMoj14AIJDuaIQ&usqp=CAE' },
+            { id: 11, title: 'Memory―How to Develop, Train and Use it', description: 'by William Walker Atkinson', price: 9.00, src: 'https://m.media-amazon.com/images/I/41A2K8VMLxL._SY445_SX342_.jpg' },
+            { id: 12, title: 'Relativity: The Special And The General Theory', description: 'by Albert Einstein', price: 12.00, src: 'https://m.media-amazon.com/images/I/61xdwYg8mQL._SX342_SY445_.jpg' },
+            { id: 13, title: 'Practical mind- reading', description: 'by William Walker Atkinson', price: 45.00, src: 'https://images-eu.ssl-images-amazon.com/images/I/61wwtyS3T2L._AC_UL165_SR165,165_.jpg' },
+            { id: 14, title: 'The law of Attraction', description: 'by William Walker Atkinson', price: 27.00, src: 'https://m.media-amazon.com/images/I/81HiQikInKL._SY342_.jpg' },
+            { id: 15, title: 'YOGA', description: 'by Swami Vivekananda', price: 25.00, src: 'https://m.media-amazon.com/images/I/61eFzcm80sL._SY342_.jpg' },
+            { id: 16, title: 'Meditations', description: 'by Marcus Aurelius', price: 5.00, src: 'https://m.media-amazon.com/images/I/81ZeeOjADFL._SY342_.jpg' },
+            { id: 17, title: 'The Lost World: with original illustrations', description: 'by Arthur Conan Doyle', price: 2.00, src: 'https://m.media-amazon.com/images/I/71gr8OhhJxL._SY342_.jpg' },
+            { id: 18, title: 'Greatest Works of Oscar Wilde (Deluxe Hardbound Edition)', description: 'by Oscar Wilde', price: 15.00, src: 'https://m.media-amazon.com/images/I/61ryQZZrcCL._SX342_SY445_.jpg' },
+            { id: 19, title: 'Nationalism', description: 'by Rabindranath Tagore', price: 21.00, src: 'https://m.media-amazon.com/images/I/81cd2YOY6iS._SY342_.jpg' },
+            { id: 20, title: 'The Secret', description: 'by Rhonda Byrne and Simon & Schuster Audio', price: 15.00, src: 'https://m.media-amazon.com/images/I/51UubkxFhsL._SX342_SY445_.jpg' },
+            // Add more products similarly
+        ];
+
+
+        function addToCart() {
+            let productId = localStorage.getItem('currentProduct');
+            let product = products.find(p => p.id == productId);
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            document.getElementById('cart-count').innerText = cart.length;
+        }
+
+        function displayProductDetails() {
+            let productId = localStorage.getItem('currentProduct');
+            let product = products.find(p => p.id == productId);
+            document.getElementById('product-details').innerHTML = `
+                <img src="${product.src}" alt="${product.title}" class="sample-image">
+                <h2>${product.title}</h2>
+                <p>${product.description}</p>
+                <p>$${product.price.toFixed(2)}</p>
+            `;
+        }
+
+        window.onload = function() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').innerText = cart.length;
+            displayProductDetails();
+        }
+    </script>
+</body>
+</html>
