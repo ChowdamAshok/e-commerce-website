@@ -7,90 +7,54 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="loading">
-    <div class="loading-overlay"></div>
-    
+    <div class="loading-overlay">
+        <h1>Books Haven</h1>
+    </div>  
     <nav>
         <div class="logo">
             <h1>Books Haven</h1>
         </div>
         <div class="cart">
-            <img src="https://cdn-icons-png.flaticon.com/128/3781/3781787.png" alt="Cart" class="cart-icon" onclick="window.location.href='cart.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/12408/12408070.png" alt="Cart" class="cart-icon" onclick="window.location.href='cart.html'">
             <span id="cart-count">0</span>
         </div>
     </nav>
-    <div class="product-list">
-        <div class="product" onclick="viewProduct(1)">
-            <img src="https://cdn.kobo.com/book-images/4253b8a9-bce6-47c0-bfe3-0a17b2b74d5a/1200/1200/False/the-book-of-life-42.jpg">
-            <div class="pd-details">
-                <h2>The book of life</h2>
-                <h4>by DR. RAJAN PANDEY</h4>
-                <h3>$10.00</h3>
-                <button onclick="viewProduct(1)">View</button>
+    <div class="home">
+        <h1>BUILD YOUR OWN LIBRARY</h1>
+        <h3>starting at @ $2/ book</h3>
+    </div>
+
+    <div class="srl-pds">
+        <h1>Bestsellers and New Arrivals:- </h1>
+        <div class="scroling-products">
+            <div class="product" onclick="viewProduct(1)">
+                <img src="https://cdn.kobo.com/book-images/4253b8a9-bce6-47c0-bfe3-0a17b2b74d5a/1200/1200/False/the-book-of-life-42.jpg">
+            </div>
+            <div class="product" onclick="viewProduct(2)">
+                <img src="https://fourminutebooks.com/wp-content/uploads/2022/11/life-changing-books-5-663x1024.jpg">
+            </div>
+            <div class="product" onclick="viewProduct(3)">
+                <img src="https://markmanson.net/wp-content/uploads/2023/06/atomic-habits.jpg">
+            </div>
+            <div class="product" onclick="viewProduct(4)">
+                <img src="https://m.media-amazon.com/images/I/510186bmxkL._SY445_SX342_.jpg">
+            </div>
+            <div class="product" onclick="viewProduct(5)">
+                <img src="https://m.media-amazon.com/images/I/51MB4Tc-cFL._AC_UF1000,1000_QL80_.jpg">
+            </div>
+            <div class="product" onclick="viewProduct(6)">
+                <img src="https://m.media-amazon.com/images/I/71cjI4kaaZL._AC_UY218_.jpg">
+            </div>
+            <div class="product" onclick="viewProduct(7)">
+                <img src="https://www.crossword.in/cdn/shop/products/9789387282247_1_360x.jpg?v=1672832048">
+            </div>
+            <div class="product" onclick="viewProduct(8)">
+                <img src="https://www.crossword.in/cdn/shop/products/9780099563648_360x.jpg?v=1680185346">
             </div>
         </div>
-        <div class="product" onclick="viewProduct(2)">
-            <img src="https://fourminutebooks.com/wp-content/uploads/2022/11/life-changing-books-5-663x1024.jpg">
-            <div class="pd-details">
-                <h2>The Psychology of Money</h2>
-                <h4>by Morgan Housel</h4>
-                <h3>$75.00</h3>
-                <button onclick="viewProduct(2)">View</button>
-            </div>
-        </div>
-        <div class="product" onclick="viewProduct(3)">
-            <img src="https://markmanson.net/wp-content/uploads/2023/06/atomic-habits.jpg">
-            <div class="pd-details">
-                <h2>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h2>
-                <h4>by James Clear</h4>
-                <h3>$13.00</h3>
-                <button onclick="viewProduct(3)">View</button>
-            </div>
-        </div>
-        <div class="product" onclick="viewProduct(4)">
-            <img src="https://m.media-amazon.com/images/I/510186bmxkL._SY445_SX342_.jpg">
-            <div class="pd-details">
-                <h2>The Wealth Money Can't Buy: The 8 Hidden Habits to Live Your Richest Life</h2>
-                <h4>by Robin Sharma, Adam Sims</h4>
-                <h3>$21.00</h3>
-                <button onclick="viewProduct(4)">View</button>
-            </div>
-        </div>
-        <div class="product" onclick="viewProduct(5)">
-            <img src="https://m.media-amazon.com/images/I/51MB4Tc-cFL._AC_UF1000,1000_QL80_.jpg">
-            <div class="pd-details">
-                <h2>The Book of Life</h2>
-                <h4>by J.Krishnamurti</h4>
-                <h3>$37.00</h3>
-                <button onclick="viewProduct(5)">View</button>
-            </div>
-        </div>
-        <div class="product" onclick="viewProduct(6)">
-            <img src="https://m.media-amazon.com/images/I/71cjI4kaaZL._AC_UY218_.jpg" alt="Product 1">
-            <div class="pd-details">
-                <h2>The Focus on What Matters: A Collection of Stoic Letters on Living Well</h2>
-                <h4>by Darius Foroux</h4>
-                <h3>$42.00</h3>
-                <button onclick="viewProduct(6)">View</button>
-            </div>
-        </div>
-        <div class="product" onclick="viewProduct(7)">
-            <img src="https://www.crossword.in/cdn/shop/products/9789387282247_1_360x.jpg?v=1672832048" alt="Product 1">
-            <div class="pd-details">
-                <h2>Gita Wisdom Through Quotes</h2>
-                <h4>by Chaitanya Charan </h4>
-                <h3>$15.00</h3>
-                <button onclick="viewProduct(7)">View</button>
-            </div>
-        </div>
-        <div class="product" onclick="viewProduct(8)">
-            <img src="https://www.crossword.in/cdn/shop/products/9780099563648_360x.jpg?v=1680185346" alt="Product 1">
-            <div class="pd-details">
-                <h2>The Leopard: A Harry Hole Novel</h2>
-                <h4>by Jo Nesbo and Don Bartlett</h4>
-                <h3>$22.00</h3>
-                <button onclick="viewProduct(8)">View</button>
-            </div>
-        </div>
+    </div>
+
+    <div class="product-list">      
         <div class="product" onclick="viewProduct(9)">
             <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTnEnIIqsLMdgN9UXAmLVde7rwRIEdm6nFlkEn_yC02UCy5eWZhsi4dK_nW0cTKe8cwQkHAMpkxsPyMCdK2NZ4KERBGF9ZPnLdQ1WINIBnSu_DFFTKGEOSaJg&usqp=CAE" alt="Product 1">
             <div class="pd-details">
