@@ -11,15 +11,18 @@ body {
 nav {
     background-color: rgba(51, 51, 51, 0.932);
     color: #fff;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.logo h1{
+    margin-left: 40px;
+}
 
 .cart {
     position: relative;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 .cart-icon {
@@ -63,6 +66,7 @@ nav {
     background-clip: text;
     -webkit-text-fill-color: transparent;   
 }
+
 .container {
     text-align: center;
     margin-top: 50px;
@@ -264,9 +268,6 @@ textarea {
 .add-to-cart-btn:hover{
     transform: scale(1.1);
 }
-
-
-
 .loading-overlay {
     position: fixed;
     width: 100%;
@@ -287,4 +288,85 @@ body.loading {
     text-align: center;
     margin-top: 200px; 
     display: block;
+}
+
+
+@media (max-width: 768px) {
+    body{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .home {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    .product-list {
+        margin-left: 30px;
+        padding: 5px;
+    }
+    .product{
+        margin-left: 20px;
+    }
+
+    .scroling-products .product {
+        flex: 0 0 calc(25% - 10px); 
+    }
+    .container button[type="submit"] {
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .home {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    .nav, .cart {
+        padding: 0 20px;
+    }
+    .logo h1 {
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .cart {
+        margin-right: 20px;
+    }
+    .home {
+        font-size: 30px;
+    }
+    .product-list {
+        margin-left: 20px;
+        padding: 5px;
+    }
+    .product {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    .product img {
+        width: 80%;
+        margin: 10%;
+    }
+    .scroling-products {
+        gap: 10px;
+        padding: 10px;
+    }
+    .scroling-products .product {
+        flex: 0 0 calc(40% - 10px); 
+    }
+    .container button[type="submit"] {
+        width: 100%;
+    }
+    form {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        width: 90%;
+        margin: 10px;
+    }
+    .loading-overlay h1 {
+        margin-top: 100px;
+    }
 }
