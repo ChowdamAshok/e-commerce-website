@@ -4,7 +4,9 @@ This project is a fully functional e-commerce website designed to provide a seam
 
 **Technologies Used** :
 Frontend:
+  
   -HTML5, CSS3, JavaScript
+
   -Responsive design principles and practices
 
 **Live Demo**
