@@ -335,10 +335,10 @@ body.loading {
         margin-right: 20px;
     }
     .home {
-        font-size: 30px;
+        font-size: 25px;
     }
     .product-list {
-        margin-left: 20px;
+        margin: 20px;
         padding: 5px;
     }
     .product {
