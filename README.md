@@ -7,7 +7,7 @@ Frontend:
   
   -HTML5, CSS3, JavaScript
 
-  -Responsive design principles and practices
+  -Responsive design principles 
 
 **Live Demo**
 Check out the live demo of the project : https://chowdamashok.github.io/e-commerce-website/
