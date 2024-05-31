@@ -334,6 +334,9 @@ body.loading {
     .cart {
         margin-right: 20px;
     }
+    .cart-count{
+        margin-right: 20px;
+    }
     .home {
         font-size: 25px;
     }
