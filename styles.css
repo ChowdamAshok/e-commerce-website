@@ -393,7 +393,6 @@ footer {
 }
 
 footer .contact {
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -455,7 +454,7 @@ footer .address i span {
 }
 
 footer .copyright {
-    background-color: #d2b498; 
+    background-color: rgb(44, 43, 43);
     padding: 10px 0;
 }
 
