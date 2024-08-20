@@ -16,9 +16,16 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+.logo button{
+    background-color: transparent;
+    border: none; 
+    padding: 0;
+}
 .logo h1{
     margin-left: 40px;
+    color: white;
 }
+
 
 .cart {
     position: relative;
@@ -118,6 +125,7 @@ nav {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     gap: 20px;
     padding: 20px;
   }
@@ -150,8 +158,11 @@ nav {
   .scroling-products::-webkit-scrollbar-thumb:hover {
     background: #999;
   }
+  .pd-details img{
+      width: 40px;
+  }
 
-button {
+.pd-details button ,.add-to-cart-btn,.buy-now, .remove-btn,#buy-now{
     margin: 30px;
     height: 50px;
     width: 150px;
@@ -161,7 +172,7 @@ button {
     border-radius: 10px;
     transition: transform 0.5s;
 }
-button:hover{
+.pd-details button:hover{
     box-shadow: 1px 2px 5px rgb(0, 255, 221);
 }
 
@@ -331,6 +342,12 @@ body.loading {
         margin-left: 20px;
         font-size: 20px;
     }
+    .cart {
+        margin-right: 20px;
+    }
+    .cart-count{
+        margin-right: 20px;
+    }
     .home {
         font-size: 25px;
     }
@@ -446,3 +463,4 @@ footer .copyright p {
     margin: 0;
     font-size: 14px;
 }
+
