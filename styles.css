@@ -2,10 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-image: url(https://www.shutterstock.com/image-photo/old-paper-texture-600nw-758024551.jpg);
-    background-size: contain;
-    
+    padding: 0;  
 }
 
 nav {
